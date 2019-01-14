@@ -1,13 +1,8 @@
 var https = require('https');
 
-function getAndPrintHTML () {
+function getAndPrintHTML (options) {
 
-  var requestOptions = {
-    host: 'syntantrist.github.io',
-    path: '/http-examples/step1.html'
-  };
-
-  https.get(requestOptions, function (response) {
+  https.get(options, function (response) {
 
     response.setEncoding('utf8');
 
@@ -24,4 +19,9 @@ function getAndPrintHTML () {
 
 }
 
-getAndPrintHTML();
+var requestOptions = {
+  host: 'syntantrist.github.io',
+  path: '/http-examples/step1.html'
+};
+
+getAndPrintHTML(requestOptions);
